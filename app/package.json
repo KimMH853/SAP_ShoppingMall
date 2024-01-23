@@ -1,12 +1,14 @@
 {
-  "name": "approuter",
-  "dependencies": {
-    "@sap/approuter": "^14.4.3"
-  },
-  "engines": {
-    "node": "^20.0.0"
-  },
+  "name": "quickstart-tutorial",
+  "private": true,
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "UI5 Demo App - Quickstart Tutorial",
   "scripts": {
-    "start": "node node_modules/@sap/approuter/approuter.js"
+    "start": "ui5 serve",
+    "build": "ui5 build"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3"
   }
 }
