@@ -11,6 +11,7 @@ entity Product {
     key product_id          : Integer @title: '상품 아이디';
         product_name        : String  @title: '상품명';
         product_description : String  @title: '상품설명';
+        product_image       : String  @title: '상품이미지';
         product_price       : Integer @title: '가격';
         stock_quantity      : Integer @title: '재고';
         category_id         : Integer @title: '카테고리 아이디';
