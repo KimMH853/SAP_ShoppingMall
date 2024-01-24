@@ -93,6 +93,11 @@
             "pattern": "deletePage",
             "name": "deletePage",
             "target": "deletePage"
+          },
+          {
+            "pattern": "shellBarWithSplitApp",
+            "name": "shellBarWithSplitApp",
+            "target": "shellBarWithSplitApp"
           }
         ],
         "targets": {
@@ -119,8 +124,22 @@
           "deletePage": {
             "id": "deletePage",
             "name": "DeletePage"
+          },
+          "shellBarWithSplitApp": {
+            "id": "toolPage",
+            "name": "ShellBarWithSplitApp"
           }
         }
-      }
+      },
+      "shell": {
+        "header": {
+           "title": "My App Title",
+           "icon": "sap-icon://home",
+           "showLogo": true
+        },
+        "homeIcon": {
+           "icon": "sap-icon://home"
+        }
+     }
     }
   }

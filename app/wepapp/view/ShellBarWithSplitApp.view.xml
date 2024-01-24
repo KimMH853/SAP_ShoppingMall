@@ -1,0 +1,71 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    controllerName="ui5.walkthrough.controller.ShellBarWithSplitApp">
+
+    <tnt:ToolPage id="toolPage">
+        <tnt:header>
+            
+            <tnt:ToolHeader>
+                <Toolbar width="100%">
+                    
+                    <Title text="Admin Page"/>
+                     <ToolbarSpacer/>
+                    <Button text="home" press="onHomeButtonPress"/>
+                </Toolbar>
+            </tnt:ToolHeader>
+        </tnt:header>
+
+        
+        <tnt:sideContent>
+            <!-- <tnt:SideNavigation id="sideNavigation">
+                
+                <tnt:NavigationList>
+                    <tnt:items>
+                        <tnt:NavigationListItem text="Dashboard" icon="sap-icon://dashboard" />
+                        <tnt:NavigationListItem text="Users" icon="sap-icon://employee"/>
+                        <tnt:NavigationListItem text="Settings" icon="sap-icon://action-settings"/>
+                        <tnt:NavigationListItem text="Add Product" icon="sap-icon://add" />
+                    </tnt:items>
+                </tnt:NavigationList>
+            </tnt:SideNavigation> -->
+
+            <core:Fragment
+					fragmentName="ui5.walkthrough.view.SideNavigation"
+					type="XML" />
+        </tnt:sideContent>
+
+       
+        <tnt:mainContents>
+           
+           <NavContainer id="pageContainer" initialPage="page2">
+				<pages>
+					<ScrollContainer id="root1" horizontal="false" vertical="true" height="100%">
+						<Text text="This is the root page"/>
+					</ScrollContainer>
+					<ScrollContainer id="page1" horizontal="false" vertical="true" height="100%">
+						<Text text="This is the first page"/>
+					</ScrollContainer>
+					<ScrollContainer id="page2" horizontal="false" vertical="true" height="100%">
+						<Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium architecto autem dicta dolor dolores dolorum earum
+						enim error esse eum ex exercitationem explicabo facilis fugit ipsum maiores, necessitatibus nemo nihil numquam odio officiis optio
+						possimus quas qui quod quos, reiciendis similique sunt tempore tenetur ut vitae voluptate. Ab accusantium, aperiam, asperiores dolores
+					 repudiandae, temporibus tenetur unde, veniam veritatis. Accusamus accusantium alias animi aperiam atque cum
+						debitis dignissimos dolorem, dolorum eligendi ex explicabo facere inventore ipsum molestiae natus nemo odio optio provident, quam quas
+						quibusdam recusandae repellat saepe tempora vel voluptate. Aliquam atque cum, dolor dolores ea expedita id in ipsa labore maiores nemo
+						nobis pariatur perferendis perspiciatis sed. Expedita, unde?"/>
+					</ScrollContainer>
+					<ScrollContainer id="root2" horizontal="false" vertical="true" height="100%">
+						<Text text="This is the root page of the second element"/>
+					</ScrollContainer>
+				</pages>
+			</NavContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+
+</mvc:View>
+
+
+

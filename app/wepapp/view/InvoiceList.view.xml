@@ -70,7 +70,7 @@
 						<layoutData>
 							<FlexItemData growFactor="1" shrinkFactor="0" />
 						</layoutData>
-						
+						<!-- <Image src="https://i.namu.wiki/i/yiJ_K8E72R314kXBpZwEXBfBYj0oGyA5ZE5dr60fyvv91lwlkWjSsNubdr7uqrA9Gqjxscji36rD1cJi8xTjpVA9BZ1klWHZbAmUs4bZ4j-L7q80WMSuDI46rULmAEECGmQg0UFNNx_QydH25WoJfA.webp" alt="Product Image" width="100%" /> -->
 						<Title text="{invoiceModel>product_name}" wrapping="true" />
 						<Label text="{invoiceModel>product_description}" wrapping="true" />
 					</VBox>
