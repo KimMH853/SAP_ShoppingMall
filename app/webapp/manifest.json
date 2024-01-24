@@ -1,5 +1,20 @@
 {
 	"sap.app": {
-		"id": "ui5.quickstart"
+	  "id": "ui5.quickstart",
+	  "crossNavigation": {
+		"inbounds": {
+		  "testView": {
+			"semanticObject": "testView",
+			"action": "display",
+			"title": "Test View",
+			"icon": "sap-icon://home",
+			"deviceTypes": {
+			  "desktop": true,
+			  "tablet": true,
+			  "phone": true
+			}
+		  }
+		}
+	  }
 	}
-}
+  }
