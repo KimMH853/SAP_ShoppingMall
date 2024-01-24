@@ -76,29 +76,34 @@ sap.ui.define([
 		formatter: formatter, 
 		
 		onInit: function () {
-			var oModel = new JSONModel(sap.ui.require.toUrl("ui5/walkthrough/model/items.json"));
-			this.getView().setModel(oModel);
+			// var oModel = new JSONModel(sap.ui.require.toUrl("ui5/walkthrough/model/items.json"));
+			// this.getView().setModel(oModel);
 
-						var oModel = new sap.ui.model.json.JSONModel({
-							invoice_product: "",  
-							invoice_quantity: 0   
-						});
-				
-						this.getView().setModel(oModel, "invoiceModel");
-					
-						$.ajax({
-							url: 'https://port4004-workspaces-ws-cbkhj.ap21.trial.applicationstudio.cloud.sap/odata/v4/invoice/Invoice',
-							type: 'GET',
-							dataType: 'json',
-							success: function (data) {
-								console.log('서버 응답:', data.value);
-								oModel.setData(data.value);
-								console.log(oModel);
-							}.bind(this), 
-							error: function (error) {
-								console.error('에러 발생:', error);
-							}
-						});
+			var oModel = new sap.ui.model.json.JSONModel({
+				product_id: 0,
+				product_name: "",
+				product_description: "",
+				product_image: "",
+				product_price: 0,
+				stock_quantity: 0,
+				category_id: 0
+			});
+	
+			this.getView().setModel(oModel, "invoiceModel");
+		
+			$.ajax({
+				url: 'https://port4004-workspaces-ws-bsc8r.ap21.trial.applicationstudio.cloud.sap/odata/v4/shopping-mall/Product',
+				type: 'GET',
+				dataType: 'json',
+				success: function (data) {
+					console.log('서버 응답:', data.value);
+					oModel.setData(data.value);
+					console.log(oModel);
+				}.bind(this), 
+				error: function (error) {
+					console.error('에러 발생:', error);
+				}
+			});
 
 
 

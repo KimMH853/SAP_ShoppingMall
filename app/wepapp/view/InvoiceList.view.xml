@@ -41,7 +41,7 @@
 		<f:GridList
 			id="gridList"
 			items="{
-				path: '/items',
+				path: 'invoiceModel>/',
 				sorter: {
 					path: 'group',
 					descending: false,
@@ -70,8 +70,9 @@
 						<layoutData>
 							<FlexItemData growFactor="1" shrinkFactor="0" />
 						</layoutData>
-						<Title text="{title}" wrapping="true" />
-						<Label text="{subtitle}" wrapping="true" />
+						
+						<Title text="{invoiceModel>product_name}" wrapping="true" />
+						<Label text="{invoiceModel>product_description}" wrapping="true" />
 					</VBox>
 				</VBox>
 			</f:GridListItem>
