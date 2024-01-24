@@ -1,0 +1,80 @@
+<!-- <mvc:View
+    controllerName="ui5.walkthrough.controller.InvoiceList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <List
+        id="invoiceList"
+        headerText="{i18n>invoiceListTitle}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{
+         path : 'invoiceModel>/'
+         }">
+        <headerToolbar>
+        
+      </headerToolbar>
+        <items>
+            <ObjectListItem
+                title="{invoiceModel>invoice_quantity} x {invoiceModel>invoice_product}"
+                type="Navigation">
+                
+            </ObjectListItem>
+           
+        </items>
+    </List>
+</mvc:View> -->
+
+<mvc:View
+	controllerName="ui5.walkthrough.controller.InvoiceList"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:f="sap.f">
+	<Slider value="100" liveChange="onSliderMoved" />
+	<Panel id="panelForGridList" backgroundDesign="Transparent">
+		<headerToolbar>
+			<Toolbar height="3rem">
+				<Title text="GridList with GridBoxLayout" />
+			</Toolbar>
+		</headerToolbar>
+
+		<f:GridList
+			id="gridList"
+			items="{
+				path: '/items',
+				sorter: {
+					path: 'group',
+					descending: false,
+					group: true
+				}
+			}"
+			growing="true"
+			growingThreshold="3"
+      growingScrollToLoad = "true"
+      >
+			<f:headerToolbar>
+				<Toolbar>
+					<Title text="GridList, using custom header with SearchField" />
+					<ToolbarSpacer />
+					<SearchField width="15rem" />
+				</Toolbar>
+			</f:headerToolbar>
+
+			<f:customLayout>
+				<grid:GridBoxLayout boxesPerRowConfig="XL4 L4 M3 S1"/>
+			</f:customLayout>
+
+			<f:GridListItem>
+				<VBox>
+					<VBox class="sapUiSmallMargin">
+						<layoutData>
+							<FlexItemData growFactor="1" shrinkFactor="0" />
+						</layoutData>
+						<Title text="{title}" wrapping="true" />
+						<Label text="{subtitle}" wrapping="true" />
+					</VBox>
+				</VBox>
+			</f:GridListItem>
+		</f:GridList>
+	</Panel>
+</mvc:View>

@@ -1,0 +1,105 @@
+<!-- <mvc:View
+    controllerName="ui5.walkthrough.controller.RequestList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <List
+        id="requestList"
+        headerText="{i18n>requestListTitle}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{
+         path : 'request>/Requests',
+         sorter : {
+                path : 'ShipperName',
+                group : true
+            }
+         }">
+        <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>requestListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField 
+               width="50%" 
+               search=".onFilterRequests"/>
+         </Toolbar>
+      </headerToolbar>
+        <items>
+            <ObjectListItem
+                title="{request>Quantity} x {request>ProductName}"
+                number="{
+                    parts: [
+                        'request>ExtendedPrice',
+                        'view>/currency'
+                    ],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: false
+                    }
+                }"
+                numberUnit="{view>/currency}"
+                numberState="{= ${request>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+                type="Navigation"
+                press=".onPress">
+                <firstStatus>
+                    <ObjectStatus
+                        text="{
+                            path: 'request>Status',
+                            formatter: '.formatter.statusText'
+                        }"/>
+                </firstStatus>
+            </ObjectListItem>
+        </items>
+    </List>
+</mvc:View> -->
+
+<!-- <mvc:View
+  controllerName="ui5.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App class="myAppDemoWT" id="app">
+      <pages>
+        <Page title="{i18n>appTitle}">
+          <VBox>
+            <Button text="Go to Request List" press="onPressRequestList" />
+            
+          </VBox>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
+</mvc:View> -->
+
+<!-- <mvc:View
+  controllerName="ui5.walkthrough.controller.RequestList"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Page
+    title="{i18n>requestListPageTitle}">
+    <List
+      items="{requestModel>/requests}">
+      <StandardListItem
+        title="{requestModel>request_product}"
+        description="{requestModel>request_quantity}"/>
+    </List>
+  </Page>
+</mvc:View> -->
+
+<mvc:View
+  controllerName="ui5.walkthrough.controller.RequestList"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+
+  <Page title="{i18n>detailPageTitle}">
+    <!-- 예시: requestModel에 바인딩된 데이터를 리스트로 표시 -->
+    <List items="{requestModel>/requests}">
+      <StandardListItem
+        title="{requestModel>invoice_product}"
+        description="{requestModel>invoice_quantity}"/>
+    </List>
+  </Page>
+
+</mvc:View>

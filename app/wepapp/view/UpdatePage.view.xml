@@ -1,0 +1,38 @@
+<mvc:View
+	controllerName="ui5.walkthrough.controller.UpdatePage"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="Update">
+        
+		<content>
+			<Label text="상품명"/>
+			<Input
+				value=""
+				valueLiveUpdate="true"
+				width="60%"
+                id="myInput"
+			/>
+            <Button
+				text="조회"
+				press="fetchData"
+				class="myCustomButton"
+			/>
+		</content>
+		<content>
+			<Label text="수정 수량"/>
+			<Input
+					value=""
+					valueLiveUpdate="true"
+					width="60%"
+					id="inputQuantity"
+					
+			/>
+            <Button
+				text="수정"
+				press="updateQuantityButtom"
+				class="myCustomButton"
+			/>
+		</content>
+	</Page>
+</mvc:View>

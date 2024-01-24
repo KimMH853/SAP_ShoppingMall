@@ -1,0 +1,59 @@
+<!-- app/order/view/orderPage.view -->
+<!-- <mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="ui5.walkthrough.controller.OrderPage"
+>
+  <Page title="New Order">
+    <content>
+      <VBox>
+        <Input value="{/product}" placeholder="Product" />
+        <Input value="{/quantity}" placeholder="Quantity" />
+        <Input value="{/amount}" placeholder="Amount" />
+        <Button text="Create Order" press="onCreateOrder" />
+      </VBox>
+    </content>
+  </Page>
+</mvc:View> -->
+
+<!-- <mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="ui5.walkthrough.controller.OrderPage"
+>
+   
+      <Page title="Invoice Details">
+        <content>
+          <VBox>
+
+            <Label text="Invoice Product"/>
+            <Input value="{invoice_product}"/>
+
+            <Label text="Invoice Quantity"/>
+            <Input value="{invoice_quantity}"/>
+
+          </VBox>
+
+        </content>
+      </Page>
+  
+</mvc:View> -->
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="ui5.walkthrough.controller.OrderPage"
+>
+  <Page title="Invoice Details">
+    <content>
+      <VBox>
+        <Label text="Invoice Product"/>
+        <Input value="{invoiceModel>/invoice_product}" valueLiveUpdate="true"/>
+
+        <Label text="Invoice Quantity"/>
+        <Input value="{invoiceModel>/invoice_quantity}" valueLiveUpdate="true"/>
+
+        <Button text="Create Order" press="onCreateOrder"/>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

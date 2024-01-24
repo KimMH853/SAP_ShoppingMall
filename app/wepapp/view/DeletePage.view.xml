@@ -1,0 +1,29 @@
+<mvc:View
+	controllerName="ui5.walkthrough.controller.DeletePage"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="Delelte">
+        
+		<content>
+			<Label text="상품명"/>
+			<Input
+				value=""
+				valueLiveUpdate="true"
+				width="60%"
+        id="delete"
+			/>
+            <Button
+				text="조회"
+				press="deleteFetchData"
+				class="myCustomButton"
+			/>
+           <Button
+				text="삭제"
+				press="delelteButton"
+				class="myCustomButton"
+			/>
+		</content>
+	
+	</Page>
+</mvc:View>
