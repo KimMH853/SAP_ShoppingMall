@@ -49,9 +49,9 @@
 				}
 			}"
 			growing="true"
-			growingThreshold="3"
-      growingScrollToLoad = "true"
-      >
+			growingThreshold="4"
+			growingScrollToLoad = "true"
+			>
 			<f:headerToolbar>
 				<Toolbar>
 					<Title text="GridList, using custom header with SearchField" />
