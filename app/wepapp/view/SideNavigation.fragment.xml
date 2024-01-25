@@ -4,11 +4,5 @@
 				fragmentName="ui5.walkthrough.view.NavigationList"
 				type="XML" />
 	</NavigationList>
-	<fixedItem>
-		<NavigationList items="{path: '/fixedNavigation'}">
-			<core:Fragment
-					fragmentName="ui5.walkthrough.view.NavigationList"
-					type="XML" />
-		</NavigationList>
-	</fixedItem>
+	
 </SideNavigation>

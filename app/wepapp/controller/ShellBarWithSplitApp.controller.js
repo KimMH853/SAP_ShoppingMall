@@ -13,6 +13,35 @@ sap.ui.define([
 			this.oModel = new JSONModel();
 			this.oModel.loadData(sap.ui.require.toUrl("ui5/walkthrough/model/model.json"), null, false);
 			this.getView().setModel(this.oModel);
+
+
+			
+			var productoModel = new sap.ui.model.json.JSONModel({
+				product_id: 0,
+				product_name: "",
+				product_description: "",
+				product_image: "",
+				product_price: 0,
+				stock_quantity: 0,
+				category_id: 0
+			});
+			
+			
+			this.getView().setModel(productoModel, "productoModel");
+		
+			$.ajax({
+				url: 'https://port4004-workspaces-ws-bsc8r.ap21.trial.applicationstudio.cloud.sap/odata/v4/shopping-mall/Product',
+				type: 'GET',
+				dataType: 'json',
+				success: function (data) {
+					console.log('서버 응답:', data.value);
+					productoModel.setData(data.value);
+					console.log(oModel);
+				}.bind(this), 
+				error: function (error) {
+					console.error('에러 발생:', error);
+				}
+			});
 		},
 
 		onItemSelect : function(oEvent) {
@@ -32,7 +61,14 @@ sap.ui.define([
 		
 			// Navigate to the OrderPage route
 			oRouter.navTo("overview");
-      },
+      	},
+		  onPress(oEvent) {
+			const oItem = oEvent.getSource();
+			const oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("detail", {
+				productPath: window.encodeURIComponent(oItem.getBindingContext("productoModel").getPath().substr(1))
+			});
+		}	
 	});
 
 
