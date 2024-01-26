@@ -28,7 +28,7 @@
                     <!-- 툴바 내용 추가 -->
                     <Title text="Shopping Mall"/>
                     <ToolbarSpacer/>
-                    <Button text="admin" press="onAdminButtonPress"/>
+                    <Button text="Admin" press="onAdminButtonPress"/>
                 </Toolbar>
             </tnt:ToolHeader>
         </tnt:header>

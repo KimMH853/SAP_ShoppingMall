@@ -8,7 +8,7 @@ using {
 } from '@sap/cds/common';
 
 entity Product {
-    key product_id          : Integer @title: '상품 아이디';
+    key product_id          : String @title: '상품 아이디';
         product_name        : String  @title: '상품명';
         product_description : String  @title: '상품설명';
         product_image       : String  @title: '상품이미지';

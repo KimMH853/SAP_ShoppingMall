@@ -1,4 +1,4 @@
-<mvc:View
+<!-- <mvc:View
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:tnt="sap.tnt"
@@ -42,12 +42,11 @@
                             <HBox justifyContent="End">
                                 <Button
                                     text="상품 추가"
-                                    press="onTopButton1Press"
+                                    press="onAddPress"
                                 />
                             </HBox>
 
                             
-                            <!-- 리스트 -->
                             <List
                                 id="invoiceList"
                                 headerText="{i18n>invoiceListTitle}"
@@ -95,6 +94,112 @@
                                             />
                                         </firstStatus>
                                     </ObjectListItem>
+                                </items>
+                            </List>
+                        </VBox>
+                    </ScrollContainer>
+                    <ScrollContainer
+                        id="root2"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                    >
+                        <Text text="수정하기" />
+                    </ScrollContainer>
+                    <ScrollContainer
+                        id="root3"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                    >
+                        <Text text="삭제하기" />
+                    </ScrollContainer>
+                </pages>
+            </NavContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View> -->
+
+
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    controllerName="ui5.walkthrough.controller.ShellBarWithSplitApp"
+>
+    <tnt:ToolPage id="toolPage">
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Toolbar width="100%">
+                    <Title text="Admin Page" />
+                    <ToolbarSpacer />
+                    <Button
+                        text="Home"
+                        press="onHomeButtonPress"
+                    />
+                </Toolbar>
+            </tnt:ToolHeader>
+        </tnt:header>
+
+        <tnt:sideContent>
+            <core:Fragment
+                fragmentName="ui5.walkthrough.view.SideNavigation"
+                type="XML"
+            />
+        </tnt:sideContent>
+
+        <tnt:mainContents>
+            <NavContainer
+                id="pageContainer"
+                initialPage="page2"
+            >
+                <pages>
+                    <ScrollContainer
+                        id="root1"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                    >
+                        <VBox>
+                            <HBox justifyContent="End">
+                                <Button
+                                    text="상품 추가"
+                                    press="onAddPress"
+                                />
+                            </HBox>
+
+                            
+                            <!-- 리스트 -->
+                            <List
+                                id="invoiceList"
+                                headerText="{i18n>invoiceListTitle}"
+                                class="sapUiResponsiveMargin"
+                                width="auto"
+                                items="{
+								path : 'productoModel>/'
+								
+							}"
+                            >
+                                <headerToolbar>
+                                    <Toolbar>
+                                        <Title text="상품 리스트" />
+                                        <ToolbarSpacer />
+                                        <SearchField
+                                            width="50%"
+                                            search=".onFilterList"
+                                        />
+                                    </Toolbar>
+                                </headerToolbar>
+                                <items>
+                                    <ObjectListItem
+                                        title="{productoModel>product_name}" 
+                                        type="Navigation"
+                                        press=".onPress" 
+                                    >
+                                    
+                                    </ObjectListItem>
+
                                 </items>
                             </List>
                         </VBox>

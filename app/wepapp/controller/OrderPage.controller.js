@@ -84,7 +84,7 @@ sap.ui.define([
             var oModel = this.getView().getModel("invoiceModel");
             var oData = oModel.getData();
         
-            // 여기서 oData를 사용하여 필요한 작업 수행
+            
             console.log("Invoice Product: " + oData.invoice_product);
             console.log("Invoice Quantity: " + oData.invoice_quantity);
             let quantityAsNumber = parseInt(oData.invoice_quantity);

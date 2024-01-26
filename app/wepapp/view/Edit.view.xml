@@ -1,0 +1,150 @@
+<!-- <mvc:View
+	controllerName="ui5.walkthrough.controller.Edit"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	
+	>
+	<Page
+		title="{editProduct>/product_name}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		id="edit"
+		>
+		<ObjectHeader
+			intro="상품 상세"
+			title="{editProduct>/product_name}"/>
+		<content>
+			<ObjectHeader
+				title="{editProduct>/product_name}"
+				titleLevel="H3"
+				number="{
+					path : 'Price',
+					formatter : '.formatter.price'
+				}"
+				numberUnit="EUR">
+				<attributes>
+					<ObjectAttribute
+						title="상품명"
+						text="{editProduct>/product_name}"/>
+					<ObjectAttribute
+						title="설명"
+						text="{editProduct>/product_description}"/>
+					<ObjectAttribute
+						title="가격"
+						text="{editProduct>/product_price}"/>
+					<ObjectAttribute
+						title="재고"
+						text="{editProduct>/stock_quantity}"/>	
+					
+				</attributes>
+				<statuses>
+					<ObjectStatus
+						text="{
+							path : 'Status',
+							formatter : '.formatter.statusText'
+						}"
+						state="{
+							path : 'Status',
+							formatter : '.formatter.statusState'
+						}"/>
+				</statuses>
+			</ObjectHeader>
+			<VBox
+				alignItems="Center"
+				renderType="Div">
+				<Image
+					id="productImage"
+					src="{editProduct>/product_image}" 
+					decorative="true"
+					densityAware="false"
+					class="sapUiSmallMargin"
+					width="100%"
+					height="100%">
+					<detailBox>
+						<LightBox id="lightBox">
+							<imageContent>
+								<LightBoxItem
+									imageSrc="editProduct>/product_image}" 
+									title="{editProduct>/product_image}"/>
+							</imageContent>
+						</LightBox>
+					</detailBox>
+				</Image>
+			</VBox>
+		</content>
+		<content>
+			<FlexBox justifyContent="Center" alignItems="Start">
+            <items>
+                <Button text="수정" press="fetchData" class="myCustomButton"/>
+                <Button text="삭제" press="fetchData" class="myCustomButton"/>
+            </items>
+        </FlexBox>
+		</content>	
+	</Page>
+</mvc:View> -->
+
+
+<!-- <mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="ui5.walkthrough.controller.Edit"
+>
+  <Page >
+  <Panel
+		headerText="상품수정"
+		class="sapUiResponsiveMargin"
+		width="auto"
+	>
+    <content >
+      <VBox>
+        <Label text="상품명"/>
+        <Input value="{oProductModel>/product_name}" valueLiveUpdate="true" width="60%"/>
+
+        <Label text="설명"/>
+        <Input value="{oProductModel>/product_description}" valueLiveUpdate="true" width="60%"/>
+
+		 <Label text="가격"/>
+        <Input value="{oProductModel>/product_price}" valueLiveUpdate="true" width="60%"/>
+
+		 <Label text="재고"/>
+        <Input value="{oProductModel>/stock_quantity}" valueLiveUpdate="true" width="60%"/>
+
+
+        <Button text="수정" press="onCreateOrder"/>
+      </VBox>
+    </content>
+	</Panel>
+  </Page>
+</mvc:View> -->
+
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="ui5.walkthrough.controller.Edit"
+>
+  <Page>
+    <Panel
+      headerText="상품수정"
+      class="sapUiResponsiveMargin"
+      width="auto"
+    >
+      <content>
+        <VBox>
+          <Label text="상품명" />
+          <Input value="{product>/product_name}" valueLiveUpdate="true" width="60%" />
+
+          <Label text="설명" />
+          <Input value="{product>/product_description}" valueLiveUpdate="true" width="60%" />
+
+          <Label text="가격" />
+          <Input value="{product>/product_price}" valueLiveUpdate="true" width="60%" />
+
+          <Label text="재고" />
+          <Input value="{product>/stock_quantity}" valueLiveUpdate="true" width="60%" />
+
+          <Button text="수정" press="onCreateOrder" />
+        </VBox>
+      </content>
+    </Panel>
+  </Page>
+</mvc:View>

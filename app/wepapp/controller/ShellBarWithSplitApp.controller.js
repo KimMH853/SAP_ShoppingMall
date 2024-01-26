@@ -4,7 +4,9 @@ sap.ui.define([
 	'sap/ui/model/json/JSONModel',
 	'sap/m/Popover',
 	'sap/m/Button',
-	'sap/m/library'
+	'sap/m/library',
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
 ], function ( Device, Controller, JSONModel, Popover, Button, mobileLibrary) {
 	"use strict";
 
@@ -36,7 +38,7 @@ sap.ui.define([
 				success: function (data) {
 					console.log('서버 응답:', data.value);
 					productoModel.setData(data.value);
-					console.log(oModel);
+					console.log(productoModel);
 				}.bind(this), 
 				error: function (error) {
 					console.error('에러 발생:', error);
@@ -62,13 +64,39 @@ sap.ui.define([
 			// Navigate to the OrderPage route
 			oRouter.navTo("overview");
       	},
-		  onPress(oEvent) {
+		  onPress: function(oEvent) {
 			const oItem = oEvent.getSource();
 			const oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("detail", {
-				productPath: window.encodeURIComponent(oItem.getBindingContext("productoModel").getPath().substr(1))
+				productPath: oItem.getBindingContext("productoModel").getProperty("product_id")
 			});
-		}	
+		},
+		
+		onAddPress: function () {
+			console.log("addProduct")
+			var oRouter = this.getOwnerComponent().getRouter();
+	
+			// Navigate to the OrderPage route
+			oRouter.navTo("addProduct");
+		},
+		onFilterList: function(oEvent) {
+			// build filter array
+			const aFilter = [];
+			const sQuery = oEvent.getParameter("query");
+			if (sQuery) {
+				// Convert the query to lowercase for case-insensitive filtering
+				const sLowerQuery = sQuery.toLowerCase();
+				
+				// Create a filter for 'product_name' containing the lowercase query
+				aFilter.push(new sap.ui.model.Filter("product_name", sap.ui.model.FilterOperator.Contains, sLowerQuery));
+			}
+		
+			// filter binding
+			const oList = this.byId("invoiceList");
+			const oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
+		}
+          
 	});
 
 

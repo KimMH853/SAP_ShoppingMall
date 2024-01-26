@@ -1,0 +1,32 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="ui5.walkthrough.controller.AddProduct"
+>
+  <Page >
+  <Panel
+		headerText="상품추가"
+		class="sapUiResponsiveMargin"
+		width="auto"
+	>
+    <content >
+      <VBox>
+        <Label text="상품명"/>
+        <Input value="{oProductModel>/product_name}" valueLiveUpdate="true" width="60%"/>
+
+        <Label text="설명"/>
+        <Input value="{oProductModel>/product_description}" valueLiveUpdate="true" width="60%"/>
+
+		 <Label text="가격"/>
+        <Input value="{oProductModel>/product_price}" valueLiveUpdate="true" width="60%"/>
+
+		 <Label text="입고"/>
+        <Input value="{oProductModel>/stock_quantity}" valueLiveUpdate="true" width="60%"/>
+
+
+        <Button text="추가" press="onCreateOrder"/>
+      </VBox>
+    </content>
+	</Panel>
+  </Page>
+</mvc:View>
