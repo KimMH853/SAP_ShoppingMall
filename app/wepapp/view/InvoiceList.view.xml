@@ -8,7 +8,7 @@
 	<Panel id="panelForGridList" backgroundDesign="Transparent">
 		<headerToolbar>
 			<Toolbar height="3rem">
-				<Title text="GridList with GridBoxLayout" />
+				
 			</Toolbar>
 		</headerToolbar>
 
@@ -23,12 +23,12 @@
 				}
 			}"
 			growing="true"
-			growingThreshold="4"
+			growingThreshold="8"
 			growingScrollToLoad = "true"
 			>
 			<f:headerToolbar>
 				<Toolbar>
-					<Title text="GridList, using custom header with SearchField" />
+					
 					<ToolbarSpacer />
 					<SearchField width="15rem" />
 				</Toolbar>

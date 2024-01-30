@@ -30,7 +30,7 @@ sap.ui.define([
         onCreateOrder: function () {
             var oProductModel = this.getView().getModel("oProductModel");
             var oData = oProductModel.getData();
-			let product_id = 56;
+			let product_id = 57;
             const quantityAsNumber = parseInt(oData.stock_quantity);
             const price = parseInt(oData.product_price);
 			const stringId = String(product_id)
